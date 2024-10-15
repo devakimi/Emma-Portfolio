@@ -1,27 +1,42 @@
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 
 const Hero = () => {
+  const [text, setText] = useState("");
+  const fullText = "I am a frontend developer with a passion in building modern interfaces and web applications";
+
+  useEffect(() => {
+    let index = 0;
+    const timer = setInterval(() => {
+      setText(fullText.slice(0, index));
+      index++;
+      if (index > fullText.length) clearInterval(timer);
+    }, 50);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className={`relative w-full h-screen mx-auto`}>
       <div
-        className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
+        className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-col items-start gap-5`}
       >
-        <div className='flex flex-col justify-center items-center mt-5'>
-          <div className='w-5 h-5 rounded-full bg-[#915EFF]' />
-          <div className='w-1 sm:h-80 h-40 violet-gradient' />
-        </div>
+        <div className='flex flex-row items-start gap-5'>
+          <div className='flex flex-col justify-center items-center mt-5'>
+            <div className='w-5 h-5 rounded-full bg-[#915EFF]' />
+            <div className='w-1 sm:h-80 h-40 violet-gradient' />
+          </div>
 
-        <div>
-          <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className='text-[#915EFF]'>Adrian</span>
-          </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I develop 3D visuals, user <br className='sm:block hidden' />
-            interfaces and web applications
-          </p>
+          <div>
+            <h1 className={`${styles.heroHeadText} text-white`}>
+              Hi, I'm <span className='text-[#915EFF]'>Emmanuel</span>
+            </h1>
+            <p className={`${styles.heroSubText} mt-2 text-white-100`}>
+              {text}
+            </p>
+          </div>
         </div>
       </div>
 

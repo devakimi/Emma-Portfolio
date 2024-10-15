@@ -1,5 +1,5 @@
 import React from "react";
-import Tilt from "react-tilt";
+import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
@@ -47,11 +47,12 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
-        I'm a skilled software developer with experience in TypeScript and
-        JavaScript, and expertise in frameworks like React, Node.js, and
-        Three.js. I'm a quick learner and collaborate closely with clients to
-        create efficient, scalable, and user-friendly solutions that solve
-        real-world problems. Let's work together to bring your ideas to life!
+        Hello! I'm Emmanuel, a front-end developer with expertise in HTML, React, Bootstrap, and CSS. 
+        I also have knowledge in Figma for design collaboration. I'm passionate about creating 
+        visually appealing and user-friendly web interfaces. With my skills in modern front-end 
+        technologies, I can bring designs to life and create responsive, interactive websites. 
+        I'm always eager to learn and take on new challenges in the ever-evolving world of web development. 
+        Let's collaborate and turn your web ideas into reality!
       </motion.p>
 
       <div className='mt-20 flex flex-wrap gap-10'>
